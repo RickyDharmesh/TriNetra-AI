@@ -107,28 +107,28 @@ TriNetra AI/
 
 ### Step 1: Start Backing Infrastructure (Docker)
 ```powershell
-cd "C:\Users\mitsu\Downloads\TriNetra AI\phase-2"
+cd "D:\java files spring boot\TriNetra\TriNetra AI\phase-2"
 docker compose -f docker-compose.infra.yml up -d
 ```
 *(Starts PostgreSQL on `5432`, Redis on `6379`, RabbitMQ on `5672`/`15672`, and MinIO on `9000`/`9001`)*.
 
 ### Step 2: Run Spring Boot Microservices
 ```powershell
-cd "C:\Users\mitsu\Downloads\TriNetra AI\phase-2\spring-services\claim-service"
+cd "D:\java files spring boot\TriNetra\TriNetra AI\phase-2\spring-services\claim-service"
 $env:PATH = "C:\Users\mitsu\Downloads\apache-maven-3.9.16-bin\apache-maven-3.9.16\bin;$env:PATH"
 mvn spring-boot:run "-Dspring-boot.run.profiles=dev"
 ```
 
 ### Step 3: Run React Investigator Dashboard
 ```powershell
-cd "C:\Users\mitsu\Downloads\TriNetra AI\phase-2\frontend-react"
+cd "D:\java files spring boot\TriNetra\TriNetra AI\phase-2\frontend-react"
 npm.cmd run dev
 ```
 Open **`http://localhost:5173`** in your browser.
 
 ### Step 4: Run Phase 3 Load Test Suite
 ```powershell
-cd "C:\Users\mitsu\Downloads\TriNetra AI"
+cd "D:\java files spring boot\TriNetra\TriNetra AI"
 python phase-3/load_test/run_load_test.py --users 50 --spawn-rate 10 --duration 2m
 ```
 
